@@ -1,0 +1,69 @@
+# -------------------------
+# Node / React frontend
+# -------------------------
+node_modules/
+build/
+dist/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# -------------------------
+# Go backend
+# -------------------------
+backend-go/bin/
+backend-go/obj/
+*.exe
+*.out
+*.test
+
+# -------------------------
+# Python scraper
+# -------------------------
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.env
+.venv/
+env/
+venv/
+*.egg-info/
+.eggs/
+
+# -------------------------
+# Docker / Containers
+# -------------------------
+*.pid
+*.seed
+*.bak
+*.swp
+*.swo
+*.tmp
+*.temp
+*.lock
+*.sock
+
+# Ignore Docker volumes and local overrides
+docker-compose.override.yml
+.env
+
+# -------------------------
+# OS / Editor junk
+# -------------------------
+.DS_Store
+Thumbs.db
+*.iml
+.idea/
+.vscode/
+*.sublime-workspace
+*.sublime-project
+
+# -------------------------
+# Coverage / Testing
+# -------------------------
+coverage/
+*.lcov
+*.coverage
+*.prof
