@@ -1,0 +1,47 @@
+name: Build and Push Docker Images
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      # Checkout code
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      # Log in to Docker Hub (or GHCR)
+      - name: Log in to Docker registry
+        uses: docker/login-action@v2
+        with:
+          username: ${{ secrets.DOCKER_USERNAME }}
+          password: ${{ secrets.DOCKER_PASSWORD }}
+
+      # Build and push backend
+      - name: Build and push backend
+        uses: docker/build-push-action@v4
+        with:
+          context: ./backend-go
+          push: true
+          tags: mbutner/recipe-backend:latest
+
+      # Build and push scraper
+      - name: Build and push scraper
+        uses: docker/build-push-action@v4
+        with:
+          context: ./scraper-python
+          push: true
+          tags: mbutner/recipe-scraper:latest
+
+      # Build and push frontend
+      - name: Build and push frontend
+        uses: docker/build-push-action@v4
+        with:
+          context: ./frontend-react
+          push: true
+          tags: mbutner/recipe-frontend:latest
