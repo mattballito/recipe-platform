@@ -12,5 +12,5 @@ jobs:
       - name: Deploy to Swarm
         run: |
           cd ~/projects/recipe-platform
-          GITHUB_SHA=${{ github.sha }} docker stack deploy -c docker-compose.prod.yml recipe-platform
+          GITHUB_sha=${{ github.sha }} docker stack deploy -c docker-compose.prod.yml recipe-platform
 
