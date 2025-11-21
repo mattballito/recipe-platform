@@ -27,7 +27,7 @@ jobs:
           push: true
           tags: |
             mbutner/recipe-backend:latest
-            mbutner/recipe-backend:${{substr(github.sha, 0, 7)}}
+            mbutner/recipe-backend:${{github.sha}}
 
       # Build and push scraper
       - name: Build and push scraper
@@ -37,7 +37,7 @@ jobs:
           push: true
           tags: |
             mbutner/recipe-backend:latest
-            mbutner/recipe-backend:${{substr(github.sha, 0, 7)}}
+            mbutner/recipe-backend:${{github.sha}}
 
       # Build and push frontend
       - name: Build and push frontend
@@ -47,4 +47,4 @@ jobs:
           push: true
           tags: |
             mbutner/recipe-backend:latest
-            mbutner/recipe-backend:${{substr(github.sha, 0, 7)}}
+            mbutner/recipe-backend:${{github.sha}}
