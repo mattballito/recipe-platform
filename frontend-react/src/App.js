@@ -26,7 +26,7 @@ function App() {
       <h1>Recipe Platform</h1>
       <input
         type="text"
-        placeholder="Enter recipe URL"
+        placeholder="Enter recipe URL!!!"
         value={url}
         onChange={(e) => setUrl(e.target.value)}
         style={{ width: "300px", marginRight: "1rem" }}
