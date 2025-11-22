@@ -1,7 +1,10 @@
 name: Deploy to Swarm
+
 on:
-  push:
-    branches: [ "main" ]
+  workflow_run:
+    workflows: ["Build and Push Docker Image"]
+    types:
+      - completed
 
 jobs:
   deploy:
@@ -9,8 +12,8 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v3
+
       - name: Deploy to Swarm
         run: |
           cd ~/projects/recipe-platform
-          GITHUB_sha=${{github.sha}} docker stack deploy -c docker-compose.prod.yml recipe-platform
-
+          GITHUB_SHA=${{ github.sha }} docker stack deploy --with-registry-auth -c docker-compose.prod.yml recipe-platform
