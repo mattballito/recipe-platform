@@ -36,8 +36,8 @@ jobs:
           context: ./scraper-python
           push: true
           tags: |
-            mbutner/recipe-backend:latest
-            mbutner/recipe-backend:${{github.sha}}
+            mbutner/recipe-scraper:latest
+            mbutner/recipe-scraper:${{github.sha}}
 
       # Build and push frontend
       - name: Build and push frontend
@@ -46,5 +46,5 @@ jobs:
           context: ./frontend-react
           push: true
           tags: |
-            mbutner/recipe-backend:latest
-            mbutner/recipe-backend:${{github.sha}}
+            mbutner/recipe-frontend:latest
+            mbutner/recipe-frontend:${{github.sha}}
