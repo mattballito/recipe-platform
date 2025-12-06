@@ -18,6 +18,7 @@ type ScrapeResponse struct {
     Title        string   `json:"title"`
     Ingredients  []string `json:"ingredients"`
     Instructions string   `json:"instructions"`
+    Image        string    `json:"image"`
 }
 
 func main() {
