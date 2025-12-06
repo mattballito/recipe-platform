@@ -40,6 +40,9 @@ function App() {
             {recipe.ingredients?.map((ing, i) => <li key={i}>{ing}</li>)}
           </ul>
           <p>{recipe.instructions}</p>
+          {recipe.image && (
+            <img src={recipe.image} alt={recipe.title} style={{ maxWidth: "400px" }} />
+          )}
         </div>
       )}
     </div>
