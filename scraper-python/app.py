@@ -18,7 +18,8 @@ def scrape():
         return jsonify({
             "title": scraper.title(),
             "ingredients": scraper.ingredients(),
-            "instructions": scraper.instructions()
+            "instructions": scraper.instructions(),
+            "image": scraper.image()
         })
 
     except Exception as e:
