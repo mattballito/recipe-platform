@@ -23,9 +23,9 @@
       "last 1 safari version"
     ]
   },
-"devDependencies": {
-  "tailwindcss": "^3.4.0",
-  "postcss": "^8.4.0",
-  "autoprefixer": "^10.4.0"
-}
+  "devDependencies": {
+    "tailwindcss": "^3.4.0",
+    "postcss": "^8.4.0",
+    "autoprefixer": "^10.4.0"
+  }
 }
