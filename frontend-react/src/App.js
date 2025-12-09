@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-
+import RecipeCard from "./components/RecipeCard";
 function App() {
   const [url, setUrl] = useState("");
   const [recipe, setRecipe] = useState(null);
@@ -35,19 +35,7 @@ function App() {
         style={{ width: "300px", marginRight: "1rem" }}
       />
       <button onClick={handleScrape}>Scrape Recipe</button>
-
-      {recipe && (
-        <div>
-          <h2>{recipe.title}</h2>
-          <ul>
-            {recipe.ingredients?.map((ing, i) => <li key={i}>{ing}</li>)}
-          </ul>
-          <p>{recipe.instructions}</p>
-          {recipe.image && (
-            <img src={recipe.image} alt={recipe.title} style={{ maxWidth: "400px" }} />
-          )}
-        </div>
-      )}
+      {recipe && <RecipeCard recipe={recipe} />}
     </div>
   );
 }
