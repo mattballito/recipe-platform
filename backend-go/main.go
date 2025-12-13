@@ -14,11 +14,23 @@ type ScrapeRequest struct {
     URL string `json:"url"`
 }
 
+type IngredientGroup struct {
+    Purpose     string   `json:"purpose"`
+    Ingredients []string `json:"ingredients"`
+}
+
+type InstructionGroup struct {
+    Title string   `json:"title"`
+    Steps []string `json:"steps"`
+}
+
 type ScrapeResponse struct {
-    Title        string   `json:"title"`
-    Ingredients  []string `json:"ingredients"`
-    Instructions string   `json:"instructions"`
-    Image        string    `json:"image"`
+    Title            string            `json:"title"`
+    Ingredients      []string          `json:"ingredients"`
+    IngredientGroups []IngredientGroup `json:"ingredientGroups"`
+    InstructionGroups []InstructionGroup `json:"instructionGroups"`
+    Instructions     string            `json:"instructions"`
+    Image            string            `json:"image"`
 }
 
 func main() {
