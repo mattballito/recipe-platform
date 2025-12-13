@@ -23,10 +23,7 @@ function App() {
   // 👇 The JSX returned by App()
   return (
     <div style={{ padding: "2rem", fontFamily: "sans-serif" }}>
-      <h1>Recipe Platform</h1>
-      <h1 className="text-4xl font-bold text-blue-600">
-        Tailwind is working!
-      </h1>
+      <h1 className="text-4xl font-bold text-blue-600">Recipe Platform</h1>
       <input
         type="text"
         placeholder="Enter recipe URL!!!"
